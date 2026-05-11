@@ -7,21 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Rekalibrovaná paleta podle vizuálu: Vibrant Pink & Off-White */
-        body { font-family: 'Inter', sans-serif; background-color: #fffcf9; color: #1e293b; }
+        /* Exaktní extrakce barev z klientského vizuálu */
+        :root {
+            --brand-magenta: #C11F56;
+            --brand-gold: #F4AF38;
+            --brand-dark: #0f172a;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #fffcf9; color: var(--brand-dark); }
         
-        /* Specifické zlaté zvýraznění pro slovo "kostek" */
-        .text-kostek { color: #f59e0b; } /* Amber/Gold z vizuálu */
-        
-        /* Vibrant Pink akcenty pro ostatní důležité texty a UI prvky */
-        .text-pink-accent { color: #db2777; } /* Pink 600 z vizuálu */
-        
-        /* Růžový gradient pro pozadí formuláře */
-        .bg-form-pink { background: linear-gradient(135deg, #db2777 0%, #ec4899 100%); color: #ffffff; }
+        .text-kostek { color: var(--brand-gold); }
+        .text-magenta-accent { color: var(--brand-magenta); }
+        .bg-magenta-accent { background-color: var(--brand-magenta); color: #ffffff; }
         
         .card-white { background: #ffffff; border: 1px solid #f1f5f9; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03); }
         
-        /* Kontrastní slidery v Vibrant Pink barvě s vysokým kontrastem */
+        /* Slidery natvrdo v Brand Magenta */
         input[type=range] { 
             -webkit-appearance: none; 
             width: 100%; 
@@ -32,28 +33,33 @@
             height: 28px; 
             width: 28px; 
             border-radius: 50%; 
-            background: #db2777; /* Vibrant Pink */
+            background: var(--brand-magenta); 
             cursor: pointer; 
             margin-top: -10px; 
-            box-shadow: 0 4px 12px rgba(219, 39, 119, 0.4);
+            box-shadow: 0 4px 12px rgba(193, 31, 86, 0.4);
             border: 3px solid #ffffff;
         }
         input[type=range]::-webkit-slider-runnable-track { 
             width: 100%; 
             height: 8px; 
             cursor: pointer; 
-            background: #e2e8f0; /* Track barva pro vysoký kontrast */
+            background: #e2e8f0; 
             border-radius: 4px; 
         }
 
         .progress-bg { background-color: #f1f5f9; }
-        /* Růžový fill progress baru */
-        .progress-fill { background: linear-gradient(90deg, #db2777 0%, #f472b6 100%); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-fill { background-color: var(--brand-magenta); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         
-        /* Custom radio cards pro výběr cílů - růžové zvýraznění při výběru */
+        /* Radio cards pro výběr cílů */
         .goal-selector input[type="radio"] { display: none; }
         .goal-selector label { transition: all 0.2s; border: 2px solid transparent; background: white; }
-        .goal-selector input[type="radio"]:checked + label { border-color: #db2777; transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(219, 39, 119, 0.1); }
+        .goal-selector input[type="radio"]:checked + label { border-color: var(--brand-magenta); transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(193, 31, 86, 0.15); }
+
+        /* Tlačítka a Checkboxy */
+        .btn-magenta { background-color: var(--brand-magenta); color: white; transition: transform 0.1s, background-color 0.2s; }
+        .btn-magenta:hover { background-color: #a01746; }
+        .btn-magenta:active { transform: scale(0.98); }
+        .accent-magenta { accent-color: var(--brand-magenta); }
     </style>
 </head>
 <body class="min-h-screen p-4 md:p-6 lg:p-8 flex flex-col items-center overflow-x-hidden">
@@ -61,19 +67,13 @@
     <header class="w-full max-w-7xl flex items-center justify-between mb-8 md:mb-12">
         <div class="flex items-center gap-3">
             <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" rx="20" fill="url(#paint0_linear_logo_pink)"/>
+                <rect width="100" height="100" rx="20" fill="#C11F56"/>
                 <path d="M50 25L25 45V75H40V55H60V75H75V45L50 25Z" fill="#ffffff"/>
-                <path d="M50 40C50 40 54 36 58 36C62 36 65 39 65 43C65 50 50 60 50 60C50 60 35 50 35 43C35 39 38 36 42 36C46 36 50 40 50 40Z" fill="#f472b6"/>
-                <defs>
-                    <linearGradient id="paint0_linear_logo_pink" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnEscape">
-                        <stop stop-color="#db2777"/>
-                        <stop offset="1" stop-color="#f472b6"/>
-                    </linearGradient>
-                </defs>
+                <path d="M50 40C50 40 54 36 58 36C62 36 65 39 65 43C65 50 50 60 50 60C50 60 35 50 35 43C35 39 38 36 42 36C46 36 50 40 50 40Z" fill="#F4AF38"/>
             </svg>
             <div class="flex flex-col">
                 <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">Start</span>
-                <span class="text-[10px] md:text-xs text-pink-accent font-bold uppercase tracking-widest">Pro děti | Investona</span>
+                <span class="text-[10px] md:text-xs text-magenta-accent font-bold uppercase tracking-widest">Pro děti | Investona</span>
             </div>
         </div>
     </header>
@@ -85,7 +85,7 @@
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tighter leading-tight mb-4 md:mb-6 text-slate-900">
                 Dnes stavíte z <span class="text-kostek">kostek.</span>
             </h1>
-            <p class="text-base md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Za pár let budou potřebovat skutečné klíče. Vybudujte jim <span class="text-pink-accent font-bold">bezpečné zázemí</span> pravidelně a bez stresu. Čas hraje pro ně.</p>
+            <p class="text-base md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Za pár let budou potřebovat skutečné klíče. Vybudujte jim <span class="text-magenta-accent font-bold">bezpečné zázemí</span> pravidelně a bez stresu. Čas hraje pro ně.</p>
         </div>
     </div>
 
@@ -98,7 +98,7 @@
                 <label for="goal-flat" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1580587771525-7819dba3b9df?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4 border border-slate-100">
                     <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Základ na byt</span>
-                    <span class="text-[11px] text-pink-accent font-bold mt-1">~1 500 000 Kč</span>
+                    <span class="text-[11px] text-magenta-accent font-bold mt-1">~1 500 000 Kč</span>
                 </label>
             </div>
 
@@ -107,7 +107,7 @@
                 <label for="goal-edu" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4 border border-slate-100">
                     <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Vysokoškolská studia</span>
-                    <span class="text-[11px] text-pink-accent font-bold mt-1">~800 000 Kč</span>
+                    <span class="text-[11px] text-magenta-accent font-bold mt-1">~800 000 Kč</span>
                 </label>
             </div>
 
@@ -116,7 +116,7 @@
                 <label for="goal-pillow" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1593526613712-7b4b9a707330?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4 border border-slate-100">
                     <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Startovní polštář</span>
-                    <span class="text-[11px] text-pink-accent font-bold mt-1">~500 000 Kč</span>
+                    <span class="text-[11px] text-magenta-accent font-bold mt-1">~500 000 Kč</span>
                 </label>
             </div>
         </div>
@@ -169,10 +169,10 @@
                         </div>
                     </div>
 
-                    <div class="bg-pink-50/50 p-5 rounded-xl border border-pink-100/50 shadow-inner">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-inner">
                         <div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-                            <span>Máte na <span id="targetGoalNameText" class="text-slate-900">Základ na byt</span>:</span>
-                            <span id="targetPercentDisplay" class="font-extrabold text-pink-accent text-base">138 %</span>
+                            <span>Splnění cíle (<span id="targetGoalNameText" class="text-slate-900">Základ na byt</span>):</span>
+                            <span id="targetPercentDisplay" class="font-extrabold text-magenta-accent text-base">138 %</span>
                         </div>
                         <div class="w-full h-4 progress-bg rounded-full overflow-hidden mb-2">
                             <div class="h-full progress-fill" id="progressBar" style="width: 100%"></div>
@@ -184,9 +184,9 @@
         </div>
 
         <div class="flex flex-col h-full gap-6 md:gap-8">
-            <div id="leadFormContainer" class="bg-form-pink rounded-3xl p-7 md:p-9 shadow-xl flex-grow flex flex-col justify-center border border-pink-700">
+            <div id="leadFormContainer" class="bg-magenta-accent rounded-3xl p-7 md:p-9 shadow-xl flex-grow flex flex-col justify-center">
                 <h3 class="text-2xl font-extrabold uppercase tracking-tighter text-white mb-3 leading-tight text-center">Chcete detailní plán?</h3>
-                <p class="text-[11px] text-pink-50 mb-7 font-medium leading-relaxed text-center">Tohle byla ilustrativní matematika. Zanechte kontakt a certifikovaní analytici <span class="font-bold">Investony</span> vám připraví přesnou a bezpečnou strategii na míru.</p>
+                <p class="text-[11px] text-white/80 mb-7 font-medium leading-relaxed text-center">Tohle byla ilustrativní matematika. Zanechte kontakt a certifikovaní analytici <span class="font-bold text-kostek">Investony</span> vám připraví přesnou a bezpečnou strategii na míru.</p>
                 
                 <form id="leadForm" class="flex flex-col gap-3.5">
                     <input type="text" id="name" placeholder="Vaše jméno" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm shadow-inner">
@@ -196,20 +196,20 @@
                     <input type="tel" id="phone" placeholder="Telefon (pro analytika)" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm shadow-inner">
                     
                     <label class="flex items-start gap-2.5 text-left mt-1 cursor-pointer group">
-                        <input type="checkbox" required class="mt-0.5 w-4 h-4 accent-pink-800 flex-shrink-0 cursor-pointer">
-                        <span class="text-[10px] text-pink-50 leading-snug font-medium group-hover:text-white transition-colors">
+                        <input type="checkbox" required class="mt-0.5 w-4 h-4 accent-magenta flex-shrink-0 cursor-pointer border-white">
+                        <span class="text-[10px] text-white/90 leading-snug font-medium group-hover:text-white transition-colors">
                             Souhlasím s předáním údajů partnerovi Investona a.s. pro nabídku služeb. Beru na vědomí tržní riziko.
                         </span>
                     </label>
 
-                    <button type="submit" class="w-full bg-slate-950 text-white py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs mt-3 transition-transform active:scale-95 hover:bg-black shadow-lg">Získat plán pro dítě</button>
+                    <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs mt-3 transition-transform active:scale-95 hover:bg-black shadow-lg">Získat plán pro dítě</button>
                 </form>
             </div>
 
             <div id="successMessage" class="hidden bg-white rounded-3xl p-10 border border-emerald-100 text-center flex-grow flex-col items-center justify-center shadow-inner">
                 <svg class="w-16 h-16 text-emerald-500 mb-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <h3 class="text-xl font-extrabold text-slate-900 mb-3 uppercase tracking-tight">Odesláno do CRM</h3>
-                <p class="text-slate-500 text-sm font-medium leading-relaxed text-center">Váš ilustrativní plán pro částku <span id="successTarget" class="text-pink-accent font-bold"></span> byl přijat. Ozveme se do 24 hodin.</p>
+                <p class="text-slate-500 text-sm font-medium leading-relaxed text-center">Váš ilustrativní plán pro částku <span id="successTarget" class="text-magenta-accent font-bold"></span> byl přijat. Ozveme se do 24 hodin.</p>
             </div>
         </div>
     </div>
@@ -219,7 +219,6 @@
     </footer>
 
     <script>
-        // DOM Elements
         const dailyInput = document.getElementById('dailyInput');
         const yearsInput = document.getElementById('yearsInput');
         const dailyAmountDisplay = document.getElementById('dailyAmountDisplay');
@@ -235,10 +234,8 @@
         const targetStatusText = document.getElementById('targetStatusText');
         const goalRadios = document.querySelectorAll('input[name="goalSelect"]');
         
-        // Fyzika a Matematika (8% p.a.)
         const annualRate = 0.08; 
         
-        // Data pro cíle z vizuálu
         const goalsData = {
             flat: { name: "Základ na byt", price: 1500000 },
             edu: { name: "Vysokoškolská studia", price: 800000 },
@@ -254,7 +251,7 @@
         function calculate() {
             const daily = parseInt(dailyInput.value);
             const years = parseInt(yearsInput.value);
-            const monthly = daily * 30; // Aproximace
+            const monthly = daily * 30;
 
             dailyAmountDisplay.textContent = daily.toLocaleString('cs-CZ') + ' Kč';
             monthlyAmountDisplay.textContent = `= ${monthly.toLocaleString('cs-CZ')} Kč / měsíc`;
@@ -263,16 +260,13 @@
             const months = years * 12;
             const monthlyRate = annualRate / 12;
             
-            // Formula pro složené úročení (pravidelné měsíční vklady)
             const futureValue = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
             const cashValue = monthly * months;
             const profit = futureValue - cashValue;
 
-            // Target logika k dětskému cíli
             const percentAchieved = Math.min(100, Math.round((futureValue / currentTargetPrice) * 100));
             const missingAmount = Math.max(0, currentTargetPrice - futureValue);
 
-            // Render do UI
             futureValueDisplay.textContent = formatCurrency(futureValue);
             cashValueDisplay.textContent = formatCurrency(cashValue);
             profitDisplay.textContent = (profit >= 0 ? '+' : '') + formatCurrency(profit);
@@ -287,7 +281,6 @@
             }
         }
 
-        // Listenery
         dailyInput.addEventListener('input', calculate);
         yearsInput.addEventListener('input', calculate);
 
@@ -300,21 +293,10 @@
             });
         });
 
-        // Initialize
         calculate(); 
 
-        // Mock API Submit
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Payload simulace
-            const payload = {
-                email: document.getElementById('email').value,
-                context_goal: targetGoalNameText.textContent,
-                context_daily: dailyInput.value,
-                context_years: yearsInput.value
-            };
-            console.log("Mock API Handoff:", payload);
-            
             document.getElementById('leadFormContainer').style.display = 'none';
             document.getElementById('successMessage').classList.remove('hidden');
             document.getElementById('successMessage').style.display = 'flex';
