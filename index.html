@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bezpečný Štart | Investona Portál</title>
+    <title>Bezpečný start | Investona Portál</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Nová "Safer" paleta: Warm Cream & Trust Teal */
-        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1e293b; }
-        .teal-gradient-text { background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-teal-gradient { background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%); color: #ffffff; }
-        .card-white { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        /* Nová "Safe Rose" paleta: Teplá krémová & Růžová/Blush */
+        body { font-family: 'Inter', sans-serif; background-color: #fffaf9; color: #1e293b; }
+        .rose-gradient-text { background: linear-gradient(90deg, #be123c 0%, #fb7185 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-rose-gradient { background: linear-gradient(135deg, #be123c 0%, #e11d48 100%); color: #ffffff; }
+        .card-white { background: #ffffff; border: 1px solid #f1f5f9; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03); }
         
-        /* Kontrastné slidery v Teal farbe */
+        /* Kontrastní slidery v Rose barvě */
         input[type=range] { 
             -webkit-appearance: none; 
             width: 100%; 
@@ -24,27 +24,27 @@
             height: 26px; 
             width: 26px; 
             border-radius: 50%; 
-            background: #0d9488; 
+            background: #e11d48; 
             cursor: pointer; 
             margin-top: -9px; 
-            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
             border: 2px solid #ffffff;
         }
         input[type=range]::-webkit-slider-runnable-track { 
             width: 100%; 
             height: 8px; 
             cursor: pointer; 
-            background: #cbd5e1; 
+            background: #e2e8f0; 
             border-radius: 4px; 
         }
 
         .progress-bg { background-color: #f1f5f9; }
-        .progress-fill { background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 100%); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-fill { background: linear-gradient(90deg, #be123c 0%, #fb7185 100%); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         
-        /* Custom radio buttons pre ciele */
+        /* Custom radio buttons pro cíle */
         .goal-selector input[type="radio"] { display: none; }
         .goal-selector label { transition: all 0.2s; border: 2px solid transparent; background: white; }
-        .goal-selector input[type="radio"]:checked + label { border-color: #0d9488; transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.1); }
+        .goal-selector input[type="radio"]:checked + label { border-color: #e11d48; transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.1); }
     </style>
 </head>
 <body class="min-h-screen p-4 md:p-6 lg:p-8 flex flex-col items-center overflow-x-hidden">
@@ -52,36 +52,36 @@
     <header class="w-full max-w-7xl flex items-center justify-between mb-8 md:mb-12">
         <div class="flex items-center gap-3">
             <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" rx="20" fill="url(#paint0_linear_teal)"/>
+                <rect width="100" height="100" rx="20" fill="url(#paint0_linear_rose)"/>
                 <path d="M50 25L25 45V75H40V55H60V75H75V45L50 25Z" fill="#ffffff"/>
-                <path d="M50 40C50 40 54 36 58 36C62 36 65 39 65 43C65 50 50 60 50 60C50 60 35 50 35 43C35 39 38 36 42 36C46 36 50 40 50 40Z" fill="#2dd4bf"/>
+                <path d="M50 40C50 40 54 36 58 36C62 36 65 39 65 43C65 50 50 60 50 60C50 60 35 50 35 43C35 39 38 36 42 36C46 36 50 40 50 40Z" fill="#fb7185"/>
                 <defs>
-                    <linearGradient id="paint0_linear_teal" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnEscape">
-                        <stop stop-color="#0d9488"/>
-                        <stop offset="1" stop-color="#14b8a6"/>
+                    <linearGradient id="paint0_linear_rose" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnEscape">
+                        <stop stop-color="#be123c"/>
+                        <stop offset="1" stop-color="#e11d48"/>
                     </linearGradient>
                 </defs>
             </svg>
             <div class="flex flex-col">
-                <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">Štart</span>
-                <span class="text-[10px] md:text-xs text-teal-600 font-bold uppercase tracking-widest">Do života | Investona</span>
+                <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">Start</span>
+                <span class="text-[10px] md:text-xs text-rose-600 font-bold uppercase tracking-widest">Do života | Investona</span>
             </div>
         </div>
     </header>
 
-    <div class="w-full max-w-5xl text-center mb-10 md:mb-16 relative p-6 md:p-12 bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
-        <img src="https://images.unsplash.com/photo-1601334418659-3df28d68d06d?q=80&w=1200&auto=format&fit=crop" alt="Rodina" class="absolute inset-0 w-full h-full object-cover opacity-10 z-0">
+    <div class="w-full max-w-5xl text-center mb-10 md:mb-16 relative p-6 md:p-12 bg-white rounded-3xl overflow-hidden shadow-sm border border-rose-50">
+        <img src="https://images.unsplash.com/photo-1601334418659-3df28d68d06d?q=80&w=1200&auto=format&fit=crop" alt="Rodina" class="absolute inset-0 w-full h-full object-cover opacity-10 z-0 grayscale">
         
         <div class="relative z-10">
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tighter leading-tight mb-4 md:mb-6 text-slate-900">
-                Dnes staviate z <span class="teal-gradient-text">kociek.</span>
+                Dnes stavíte z <span class="rose-gradient-text">kostek.</span>
             </h1>
-            <p class="text-base md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Za pár rokov budú potrebovať skutočné kľúče. Vybudujte im <span class="text-teal-700 font-bold">bezpečné zázemie</span> pravidelne a bez stresu. Čas je najväčší dar, ktorý im môžete dať.</p>
+            <p class="text-base md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">Za pár let budou potřebovat skutečné klíče. Vybudujte jim <span class="text-rose-600 font-bold">bezpečné zázemí</span> pravidelně a bez stresu. Čas je největší dar, který jim můžete dát.</p>
         </div>
     </div>
 
     <div class="w-full max-w-7xl mb-10">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5 text-center">Zvoľte cieľ pre vaše dieťa</h2>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5 text-center">Zvolte cíl pro vaše dítě</h2>
         <div class="flex flex-wrap justify-center gap-4 md:gap-6 goal-selector">
             
             <div class="relative">
@@ -89,7 +89,7 @@
                 <label for="goal-flat" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1580587771525-7819dba3b9df?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4">
                     <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Základ na byt</span>
-                    <span class="text-[11px] text-teal-600 font-bold mt-1">~1 500 000 Kč</span>
+                    <span class="text-[11px] text-rose-600 font-bold mt-1">~1 500 000 Kč</span>
                 </label>
             </div>
 
@@ -97,8 +97,8 @@
                 <input type="radio" name="goalSelect" id="goal-edu" value="edu">
                 <label for="goal-edu" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4">
-                    <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Vysokoškolské štúdiá</span>
-                    <span class="text-[11px] text-teal-600 font-bold mt-1">~800 000 Kč</span>
+                    <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Vysokoškolská studia</span>
+                    <span class="text-[11px] text-rose-600 font-bold mt-1">~800 000 Kč</span>
                 </label>
             </div>
 
@@ -106,8 +106,8 @@
                 <input type="radio" name="goalSelect" id="goal-pillow" value="pillow">
                 <label for="goal-pillow" class="flex flex-col items-center rounded-2xl p-4 cursor-pointer w-40 md:w-56 shadow-sm border border-slate-100">
                     <img src="https://images.unsplash.com/photo-1593526613712-7b4b9a707330?q=80&w=400&auto=format&fit=crop" class="w-full h-24 md:h-32 object-cover rounded-xl mb-4">
-                    <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Štartovný vankúš</span>
-                    <span class="text-[11px] text-teal-600 font-bold mt-1">~500 000 Kč</span>
+                    <span class="text-sm md:text-base font-bold text-slate-800 text-center leading-tight">Startovní polštář</span>
+                    <span class="text-[11px] text-rose-600 font-bold mt-1">~500 000 Kč</span>
                 </label>
             </div>
         </div>
@@ -117,23 +117,23 @@
         
         <div class="flex flex-col h-full gap-6 md:gap-8">
             <div class="card-white rounded-2xl p-6 md:p-8 flex-grow flex flex-col justify-center">
-                <h3 class="text-lg font-bold uppercase tracking-widest mb-10 text-teal-800">Vaše príspevky</h3>
+                <h3 class="text-lg font-bold uppercase tracking-widest mb-10 text-rose-800">Vaše příspěvky</h3>
                 
                 <div class="mb-12">
-                    <label class="block text-xs font-bold tracking-widest uppercase text-slate-400 mb-5">Koľko odložíte denne?</label>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-slate-400 mb-5">Kolik odložíte denně?</label>
                     <div class="flex items-end gap-3 mb-5">
                         <span class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-none" id="dailyAmountDisplay">200 Kč</span>
                     </div>
-                    <span class="text-sm text-slate-500 font-medium block mb-5" id="monthlyAmountDisplay">= 6 000 Kč / mesiac</span>
+                    <span class="text-sm text-slate-500 font-medium block mb-5" id="monthlyAmountDisplay">= 6 000 Kč / měsíc</span>
                     <input type="range" id="dailyInput" min="100" max="2000" step="50" value="200">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold tracking-widest uppercase text-slate-400 mb-5">Doba sporenia (Roky)</label>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-slate-400 mb-5">Doba spoření (Roky)</label>
                     <div class="flex items-end gap-3 mb-5">
                         <span class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-none" id="yearsDisplay">15 let</span>
                     </div>
-                    <p class="text-[10px] text-slate-400 font-bold mb-5 uppercase tracking-tight">(Odporúčaný horizont: 10–18 rokov)</p>
+                    <p class="text-[10px] text-slate-400 font-bold mb-5 uppercase tracking-tight">(Doporučený horizont: 10–18 let)</p>
                     <input type="range" id="yearsInput" min="5" max="18" step="1" value="15">
                 </div>
             </div>
@@ -142,71 +142,71 @@
         <div class="flex flex-col h-full gap-6 md:gap-8">
             <div class="card-white rounded-2xl p-6 md:p-8 flex-grow flex flex-col justify-between relative overflow-hidden">
                 <div class="relative z-10">
-                    <h3 class="text-lg font-bold uppercase tracking-widest mb-8 text-teal-800 text-center lg:text-left">Budúca hodnota úspor</h3>
+                    <h3 class="text-lg font-bold uppercase tracking-widest mb-8 text-rose-800 text-center lg:text-left">Budoucí hodnota úspor</h3>
                     
                     <div class="mb-10 text-center lg:text-left">
-                        <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Odhadovaná suma (8 % p.a.)</p>
+                        <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Odhadovaná částka (8 % p.a.)</p>
                         <div class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-2" id="futureValueDisplay">2 073 133 Kč</div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-8 mb-8">
                         <div>
-                            <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Vložené prostriedky</p>
+                            <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Vložené prostředky</p>
                             <p class="text-xl font-bold text-slate-700" id="cashValueDisplay">1 080 000 Kč</p>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Zhodnotenie trhom</p>
-                            <p class="text-xl font-bold text-teal-600" id="profitDisplay">+993 133 Kč</p>
+                            <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Zhodnocení trhem</p>
+                            <p class="text-xl font-bold text-rose-600" id="profitDisplay">+993 133 Kč</p>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                    <div class="bg-rose-50/50 p-5 rounded-xl border border-rose-100">
                         <div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-                            <span>Splnenie cieľa (<span id="targetGoalNameText" class="text-slate-900">Byt</span>):</span>
-                            <span id="targetPercentDisplay" class="font-extrabold text-teal-700 text-base">138 %</span>
+                            <span>Splnění cíle (<span id="targetGoalNameText" class="text-slate-900">Základ na byt</span>):</span>
+                            <span id="targetPercentDisplay" class="font-extrabold text-rose-700 text-base">138 %</span>
                         </div>
                         <div class="w-full h-4 progress-bg rounded-full overflow-hidden mb-2">
                             <div class="h-full progress-fill" id="progressBar" style="width: 100%"></div>
                         </div>
-                        <p class="text-[11px] text-slate-400 text-center font-medium" id="targetStatusText">Chýba: <span id="targetMissingDisplay" class="text-slate-600">0 Kč</span></p>
+                        <p class="text-[11px] text-slate-400 text-center font-medium" id="targetStatusText">Chybí: <span id="targetMissingDisplay" class="text-slate-600">0 Kč</span></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="flex flex-col h-full gap-6 md:gap-8">
-            <div id="leadFormContainer" class="bg-teal-gradient rounded-3xl p-7 md:p-9 shadow-xl flex-grow flex flex-col justify-center">
-                <h3 class="text-2xl font-extrabold uppercase tracking-tighter text-white mb-3 leading-tight">Chcete detailný plán?</h3>
-                <p class="text-[11px] text-teal-50 mb-7 font-medium leading-relaxed">Naši analytici z <span class="font-bold">Investony</span> vám pripravia presnú stratégiu, ako efektívne a bezpečne zhodnocovať úspory vašich detí.</p>
+            <div id="leadFormContainer" class="bg-rose-gradient rounded-3xl p-7 md:p-9 shadow-xl flex-grow flex flex-col justify-center">
+                <h3 class="text-2xl font-extrabold uppercase tracking-tighter text-white mb-3 leading-tight">Chcete detailní plán?</h3>
+                <p class="text-[11px] text-rose-50 mb-7 font-medium leading-relaxed">Naši analytici z <span class="font-bold">Investony</span> vám připraví přesnou strategii, jak efektivně a bezpečně zhodnocovat úspory vašich dětí.</p>
                 
                 <form id="leadForm" class="flex flex-col gap-3.5">
-                    <input type="text" id="name" placeholder="Vaše meno" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm">
+                    <input type="text" id="name" placeholder="Vaše jméno" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm">
                     
                     <input type="email" id="email" placeholder="Váš e-mail" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm">
                     
-                    <input type="tel" id="phone" placeholder="Telefón (pre analytika)" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm">
+                    <input type="tel" id="phone" placeholder="Telefon (pro analytika)" required class="w-full bg-white border-0 rounded-xl px-4 py-3 text-slate-900 font-semibold placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm">
                     
                     <label class="flex items-start gap-2.5 text-left mt-1 cursor-pointer group">
-                        <input type="checkbox" required class="mt-0.5 w-4 h-4 accent-teal-800 flex-shrink-0 cursor-pointer">
-                        <span class="text-[10px] text-teal-50 leading-snug font-medium">
-                            Súhlasím s odovzdaním údajov partnerovi Investona a.s. pre zaslanie investičného plánu. Beriem na vedomie, že investovanie zahŕňa trhové riziko.
+                        <input type="checkbox" required class="mt-0.5 w-4 h-4 accent-rose-800 flex-shrink-0 cursor-pointer">
+                        <span class="text-[10px] text-rose-50 leading-snug font-medium">
+                            Souhlasím s předáním údajů partnerovi Investona a.s. pro zaslání investičního plánu. Beru na vědomí, že investování zahrnuje tržní riziko.
                         </span>
                     </label>
 
-                    <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs mt-3 transition-transform active:scale-95 hover:bg-black shadow-lg">Získať plán pre dieťa</button>
+                    <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs mt-3 transition-transform active:scale-95 hover:bg-black shadow-lg">Získat plán pro dítě</button>
                 </form>
             </div>
 
-            <div id="successMessage" class="hidden bg-white rounded-3xl p-10 border border-teal-100 text-center flex-grow flex-col items-center justify-center shadow-sm">
-                <svg class="w-16 h-16 text-teal-600 mb-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <h3 class="text-xl font-extrabold text-slate-900 mb-3 uppercase tracking-tight">Požiadavka odoslaná</h3>
-                <p class="text-slate-500 text-sm font-medium leading-relaxed text-center">Váš plán pre sumu <span id="successTarget" class="text-teal-700 font-bold"></span> bol vygenerovaný. Náš certifikovaný špecialista sa vám ozve do 24 hodín.</p>
+            <div id="successMessage" class="hidden bg-white rounded-3xl p-10 border border-rose-100 text-center flex-grow flex-col items-center justify-center shadow-sm">
+                <svg class="w-16 h-16 text-rose-600 mb-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="text-xl font-extrabold text-slate-900 mb-3 uppercase tracking-tight">Poptávka odeslána</h3>
+                <p class="text-slate-500 text-sm font-medium leading-relaxed text-center">Váš plán pro částku <span id="successTarget" class="text-rose-700 font-bold"></span> byl vygenerován. Náš certifikovaný specialista se vám ozve do 24 hodin.</p>
             </div>
         </div>
     </div>
 
     <footer class="w-full max-w-7xl text-center mb-10 text-[10px] text-slate-400 border-t border-slate-200 pt-8 px-6 font-medium leading-relaxed mt-10">
-        *Ilustratívny model "Bezpečný Štart | Investona". Predpokladá priemerné ročné zhodnotenie portfólia 8 % p.a. (napr. cez indexové fondy) pred zdanením. Historické výnosy nie sú zárukou budúcich ziskov. Cieľové sumy sú orientačné. Investovanie na kapitálových trhoch je spojené s rizikom, môžete prísť o časť alebo celú investíciu. Táto stránka slúži na edukačné a technologické účely v rámci Proof of Concept.
+        *Ilustrativní model "Bezpečný start | Investona". Předpokládá průměrné roční zhodnocení portfolia 8 % p.a. (např. přes indexové fondy) před zdaněním. Historické výnosy nejsou zárukou budoucích zisků. Cílové částky jsou orientační. Investování na kapitálových trzích je spojeno s rizikem, můžete přijít o část nebo celou investici. Tato stránka slouží k edukačním a technologickým účelům v rámci Proof of Concept.
     </footer>
 
     <script>
@@ -229,8 +229,8 @@
         
         const goalsData = {
             flat: { name: "Základ na byt", price: 1500000 },
-            edu: { name: "Vysokoškolské štúdiá", price: 800000 },
-            pillow: { name: "Štartovný vankúš", price: 500000 }
+            edu: { name: "Vysokoškolská studia", price: 800000 },
+            pillow: { name: "Startovní polštář", price: 500000 }
         };
 
         let currentTargetPrice = goalsData['flat'].price;
@@ -245,7 +245,7 @@
             const monthly = daily * 30;
 
             dailyAmountDisplay.textContent = daily.toLocaleString('cs-CZ') + ' Kč';
-            monthlyAmountDisplay.textContent = `= ${monthly.toLocaleString('cs-CZ')} Kč / mesiac`;
+            monthlyAmountDisplay.textContent = `= ${monthly.toLocaleString('cs-CZ')} Kč / měsíc`;
             yearsDisplay.textContent = years + (years < 5 ? ' roky' : ' let');
 
             const months = years * 12;
@@ -266,9 +266,9 @@
             progressBar.style.width = percentAchieved + '%';
             
             if(missingAmount === 0) {
-                targetStatusText.innerHTML = '<span class="text-teal-600 font-bold">Cieľ zabezpečený!</span>';
+                targetStatusText.innerHTML = '<span class="text-rose-600 font-bold">Cíl zajištěn!</span>';
             } else {
-                targetStatusText.innerHTML = 'Chýba: <span class="text-slate-700">' + formatCurrency(missingAmount) + '</span>';
+                targetStatusText.innerHTML = 'Chybí: <span class="text-slate-700">' + formatCurrency(missingAmount) + '</span>';
             }
         }
 
